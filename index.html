@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            border: 2px solid black;
+        }
+        td{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+        .hole{
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <table id="table">
+        <tr>
+            <td class=""></td>
+            <td class=""></td>
+            <td class=""></td>
+        </tr>
+        <tr>
+            <td class=""></td>
+            <td class=""></td>
+            <td class=""></td>
+        </tr>
+        <tr>
+            <td class=""></td>
+            <td class=""></td>
+            <td class="hole"></td>
+        </tr>
+    </table>
+    <script>
+         /// создание массива
+         var td = document.getElementsByTagName('td');
+        var arr = [];
+        var notArr = [];// использованные числа
+        for (var i =0;i<td.length-1;i++){
+            
+            
+                while(arr[i]!= ... ){ //проверка на совпадени с notArr
+                    arr[i]=Math.ceil(Math.random()*8);
+                    notArr[i]=arr[i];
+                }
+        arr[td.length-1]=0;
+        console.log('arr=',arr);
+        for(var i =0;i<td.length;i++){
+            td[i].innerHTML = arr[i]+'';
+        }
+
+        var table = document.getElementById('table');
+        var td = document.querySelector('td');
+        var lastMarked = '';
+        table.onclick = function(e){
+            // console.log('e.target=',e.target);
+            // console.log('lastMarked=',lastMarked);
+            if((e.target.classList !='hole')&&lastMarked.classList=='hole'){
+                e.target.classList ='hole';
+                lastMarked.classList ='';
+                lastMarked = '';
+                lastMarked=e.target;
+            }else {
+                lastMarked=e.target;
+            }
+        }
+
+       
+
+    </script> 
+</body>
+</html>
